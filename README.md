@@ -3,21 +3,29 @@ A code review checklist for Java/Android projects.
 
 
 # Java
+
+#### General
 - Does the project pass all tests on the CI server?
-- Does the code check for null references and handle them appropriately?
-- Are method parameters validated if the code relies on assumptions (e.g. non-null, between 0-100)?
 - Is there any repetition in the code which can be avoided?
-- Could any of the methods/classes/variables have a more appropriate name?
-- Is the code formatted similarly to the rest of the project?
 - Have the toString/equals/hashcode methods been implemented on model classes?
+
+#### Stylistic
 - Are there any excessively long lines (>120 chars)?
 - Are there any excessively large methods/classes?
+- Could any of the methods/classes/variables have a more appropriate name?
+- Is the code formatted similarly to the rest of the project?
+- Are there enough comments?
+
+#### Error Handling
+- Are stream resources closed?
+- Are all exceptions handled?
+- Does the code check for null references and handle them appropriately?
+- Are method parameters validated if the code relies on assumptions (e.g. non-null, between 0-100)?
+
+#### Mutability
 - Is the accessibility level (public/protected/package/private) appropriate for all fields/methods/classes?
 - Can it be final?
 - Can the method return an empty List rather than null?
-- Are stream resources closed?
-- Are all exceptions handled?
-- Are there enough comments?
 
 # Android
 - Are listeners/receivers deregistered in the appropriate lifecycle method?
